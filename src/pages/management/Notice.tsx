@@ -5,8 +5,8 @@ import { NoticeSearch } from "../../components/page/Management/Notice/NoticeSear
 export const Notice = () => {
     return (
         <>
-            <ContentBox variant='primary' fontSize='large'>
-                공지사항
+            <ContentBox  title='공지사항' variant='primary' fontSize='large'>
+         
             </ContentBox>
             <NoticeSearch />
             <NoticeMain />

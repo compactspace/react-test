@@ -4,14 +4,14 @@ import { Box, Title } from "./styled";
 export interface IContentBoxProps {
     children?: React.ReactNode | React.ReactNode[];
 }
-
+//? 연산자는 없어도 되고 있어도 되고의 이미 이다.
 interface ContentBoxProps {
     title?: string;
     variant?: "default" | "primary" | "danger" | "success" | "warning" | "info" | "dark" | "light";
     fullWidth?: boolean;
     bordered?: boolean;
     fontSize?: "small" | "medium" | "large";
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 export const ContentBox: FC<ContentBoxProps> = ({

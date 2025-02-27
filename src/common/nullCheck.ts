@@ -1,3 +1,5 @@
+// 빈값을 처리하는 즉 인풋의 값이 빈값이라면
+
 export type TypeNullCheck = {
     inval?: string | number;
     msg?: string;

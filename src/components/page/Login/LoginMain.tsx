@@ -12,6 +12,7 @@ export interface IAccount {
     pwd: string;
 }
 
+
 export const LoginMain = () => {
     const setLoginInfo = useSetRecoilState<ILoginInfo>(loginInfoState);
     const [account, setAccount] = useState<IAccount>({

@@ -8,7 +8,7 @@ export const DashBoard = () => {
     const userInfo = sessionStorage.getItem('userInfo');
     const navigate = useNavigate();
     useUserInfo();
-
+    
     useEffect(() => {
         if (userInfo) {
             const userInfoObj: ILoginInfo = JSON.parse(userInfo);
@@ -26,6 +26,7 @@ export const DashBoard = () => {
             <ul className="dashboard-ul">
                 <li className="menu-bar">{<LeftMenuBar />}</li>
                 <li className="content">
+                    {/*  Routers.tsx 파일에 있는라우터 상위 패스의 childeren path의 element=컴포넌트를  열릴 공간으로  Outlet  으로 끼워 넣는거다 걍암기 */}
                     <Suspense fallback={<h2>Loading....</h2>}>{<Outlet />}</Suspense>
                 </li>
             </ul>
