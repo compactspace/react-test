@@ -8,6 +8,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { modalSate } from "../../../../../stores/modalState";
+import axios from "axios";
 export const NoticeSearch = () => {
     //이는 돔에 직접 접근하이게 돔의 타입을 적어야한다.
     const title = useRef<HTMLInputElement>();
@@ -15,6 +16,7 @@ export const NoticeSearch = () => {
     const [endDate, setEndDate] = useState<string>();
     const [modal, setModal] = useRecoilState<boolean>(modalSate);
     const [noticeId, setNoticeId] = useState<number>(0);
+    const [cPage, setCPage] = useState<number>(0);
     const navigate = useNavigate();
     useEffect(() => {
         // window.location 의 객체가 가지고 있는 속성 서치와 페스네임 이 있는데
@@ -33,6 +35,7 @@ export const NoticeSearch = () => {
         const queryString = query.length > 0 ? `?${query.join("&")}` : "";
         navigate(`/react/management/notice${queryString}`);
     };
+
     return (
         <>
             <NoticeSearchStyled>
@@ -44,11 +47,6 @@ export const NoticeSearch = () => {
                 </StyledButton>
                 <StyledButton onClick={() => setModal(!modal)}>등록</StyledButton>
             </NoticeSearchStyled>
-            {modal && (
-                <Portal>
-                    <NoticeModal noticeId={noticeId} setNoticeId={setNoticeId} />
-                </Portal>
-            )}
         </>
     );
 };

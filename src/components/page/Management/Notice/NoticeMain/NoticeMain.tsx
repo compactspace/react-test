@@ -55,6 +55,11 @@ export const NoticeMain = () => {
         setNoticeId(id);
     };
 
+    const postSuccess = () => {
+        setModal(!modal);
+        searchNoticeList(cPage);
+    };
+
     return (
         <>
             총 갯수 {noticecCount}: 현재 페이지 : 0
@@ -95,7 +100,7 @@ export const NoticeMain = () => {
             {/* 포팔 폴더의 폴더를 써서 모양만  잡아준다. 그냥 만든거로 쓴다  */}
             {modal && (
                 <Portal>
-                    <NoticeModal noticeId={noticeId} setNoticeId={setNoticeId} />
+                    <NoticeModal noticeId={noticeId} setNoticeId={setNoticeId} postSuccess={postSuccess} />
                 </Portal>
             )}
         </>
