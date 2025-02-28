@@ -22,6 +22,10 @@ const routers: RouteObject[] = [
                         path: "notice",
                         element: <Notice />,
                     },
+                    {
+                        path: "common-code",
+                        element: <CommonCode />,
+                    },
                 ],
             },
         ],
